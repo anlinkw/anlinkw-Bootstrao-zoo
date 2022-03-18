@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+	<title>新竹市立動物園</title>
+	<meta name="description" content="世界上最美的動物,全球分佈的區域,優惠購票,動物贊助活動">
+	<meta name="keywords" content="動物園,犀牛,往上購物,動物贊助,動物保育">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700;900&display=swap" rel="stylesheet">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="lib/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/message-box.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12 col-md-12 breadcrumb">
+				<nav aria-label="breadcrumb" id="breadcrumb">
+					<ol class="breadcrumb">
+					  <li class="breadcrumb-item"><a href="index.html" data-toggle="tooltip" data-placement="bottom" title="新竹市立動物園"><i class="fas fa-home"></i>首頁</a></li>
+					  <li class="breadcrumb-item active" aria-current="page">給我們留言</li>
+					</ol>
+				</nav>
+			</div>
+		</div>
+	</div>
+
+	<div id="box">
+		<div class="container p-3">
+				<form id="Form" method="post" enctype="multipart/form-data">
+					<!-- <div><input type="hidden" name=""></div> -->
+					<div class="form-group row">
+						<label for="name" class="col-sm-2 col-form-label">您的大名：</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="name" name="name" placeholder="請輸入" required>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="title" class="col-sm-2 col-form-label">問題標題：</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="title" name="title" size="20" placeholder="請輸入">
+						</div>
+					</div>
+					<div class="form-group row">
+					  <label for="email" class="col-sm-2 col-form-label">電子信箱：</label>
+					  <div class="col-sm-10">
+							<input type="email" class="form-control" id="email" name="email" size="32" placeholder="name@gmail.com" required>
+					  </div>
+					</div>
+					<div class="form-group row">
+					  <label for="choice" class="col-sm-2 col-form-label">問題類別：</label>
+					  <div class="col-sm-10">
+							<select class="form-control" id="choice" name="choice">
+								<option value="0">請選擇</option>
+								<option value="1">有關動物知識</option>
+								<option value="2">有關園區服務</option>
+								<option value="3">有關網站內容</option>
+								<option value="4">有關動物認養</option>
+								<option value="5">有關公物報修</option>
+							</select>
+							<div id="c1" style="display: block;">受理一般動物常識、動物相關知識等諮詢</div>
+							<div id="c2" style="display: block;">受理園區服務之諮詢，如業務相關事項詢問、陳情或建議等</div>
+							<div id="c3" style="display: block;">受理網站內容相關諮詢</div>
+							<div id="c4" style="display: block;">受理動物認養捐款相關服務及諮詢</div>
+							<div id="c5" style="display: block;">受理園區相關物品及設施損壞報修</div>
+					  </div>
+					</div>
+					<div class="form-group row">
+					  <label for="message" class="col-sm-2 col-form-label">問題內容：</label>
+					  <div class="col-sm-10">
+							<textarea class="form-control " id="message" name="message" rows="9" cols="56" required></textarea>
+					  </div>
+					</div>
+					<div class="form-group row">
+					  <label for="file" class="col-sm-2 col-form-label">照片上傳：</label>
+					  <div class="col-sm-10">
+						<input type="file" class="col-xs-10 col-sm-5" name="file"><br>
+						僅接受JPG格式，檔案大小為1MB以內。
+					</div>
+					</div>
+					<!-- 按鈕 -->
+					<div class="form-group row">
+						<label for="" class="col-sm-2 col-form-label"></label>
+						<div class="col-sm-10">
+							  <input type="submit" class="btn btn-info" id="Button1" name="Button1" value="送出"  style="background-color: cadetblue;">
+							  <input type="reset" class="btn" name="submit" value="重填">
+						</div>
+					  </div>  
+				</form>			
+		</div>
+	</div>
+
+	<script>
+		function init(){
+			let c1 = document.querySelector('#c1');
+			let c2 = document.querySelector('#c2');
+			let c3 = document.querySelector('#c3');
+			let c4 = document.querySelector('#c4');
+			let c5 = document.querySelector('#c5');
+			let arr = [c1, c2, c3, c4, c5];
+
+		}
+		window.addEventListener('load', init)
+	</script>
+
+
+	<!-- https://www.zoo.gov.tw/contactus/ -->
+	<!-- https://www.zoo.gov.taipei/News_Content.aspx?n=BB6F4DAE3E233F63&sms=5D69554CB93131CF&s=09645A4ED8503448 -->
+	<!-- https://getbootstrap.com/docs/4.6/components/forms/?#sizing -->
+
+	<!-- 側邊欄  -->
+	<!-- <aside class="sidebar">
+		<div class="icon-box">
+				<div class="icon icon-facebook"><a href="#"></a></div>
+		</div>
+		<div class="icon-box">
+				<div class="icon icon-twitter"><a href="#"></a></div>
+		</div>
+		<div class="icon-box">
+				<div class="icon icon-line"><a href="#"></a></div>
+		</div>
+	</aside> -->
+
+	<!-- <script src="js/public.js"></script>
+	<script src="js/index/index.js"></script> -->
+
+	<!-- Boostrap JS -->
+	<script src="lib/js/jquery-3.6.min.js"></script>
+	<script src="lib/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="lib/js/bootstrap.min.js"></script>
+
+	<!-- vue.js -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script> -->
+	<!-- axios -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+	<script src="js/index/vue-weather.js"></script> -->
+
+</body>
+</html>
+
+<!-- https://anlinkw.github.io/anlinkw-Bootstrao-zoo/ -->

@@ -8,7 +8,9 @@ img{
 	vertical-align: middle;
 	margin: 0 auto;
 }
-
+#forecast{
+	position: relative;
+}
 #forecast h2{
 	width: 20%;
 	margin: 30px auto 50px;
@@ -17,6 +19,11 @@ img{
 	color: #1a67b1;
 	text-align: center;
 	border-bottom: 2px solid black;
+}
+#forecast .toast{
+	position: absolute;
+	right: 20px;
+	top: 0;
 }
 
 .table tr td:nth-child(odd){
@@ -97,6 +104,12 @@ img{
 		font-size: 22px;
 		width: 50%;
 	}
+	#forecast .toast{
+		left: 0;
+		right: 0;
+		top: -20px;
+		margin: 0 auto;
+	}	
 	#news-wrapper h2, #video h2{
 		width: 30%;
 	}
@@ -105,3 +118,4 @@ img{
 		height: 100%;
 	}
 }
+

@@ -26,14 +26,28 @@
 	</div>
 
 	<div id="forecast">
-		<h2 class="">東區一周天氣預報</h2>
+		<h2>東區一周天氣預報</h2>
+		<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
+			<div class="toast-header">
+			  <img src="images/logo.png" class="rounded mr-2">
+			  <i class="fas fa-laptop"></i>
+			  <strong class="mr-auto">提示訊息</strong>
+			  <!-- <small>11 mins ago</small> -->
+			  <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="toast-body">
+			  即時天氣資料來自 <a href="https://www.cwb.gov.tw/V8/C/">交通部中央氣象局</a>
+			</div>
+		  </div>
+
 		<div class="container-fluid">
 			<div class="row">
 				<div id="feedback" class="col-12 col-sm-12 col-md-6 mr-auto ml-auto table-responsive-sm"></div> 
 			</div>
 		</div>
 	</div>
-
 
 	<div id="news-wrapper">
 		<h2>氣象新聞</h2>
@@ -43,13 +57,13 @@
 					<div class="tab ">
 						<ul class="nav nav-tabs" id="myTab" role="tablist">
 							<li>
-							  <a class="nav-link active" data-toggle="tab" href="#f-1"><i class="fas fa-republican"></i>概況</a>
+							  <a class="nav-link active" data-toggle="tab" href="#f-1"><i class="fas fa-republican"></i> 概況</a>
 							</li>
 							<li>
-							  <a class="nav-link" data-toggle="tab" href="#f-2"><i class="fab fa-weebly"></i>週報</a>
+							  <a class="nav-link" data-toggle="tab" href="#f-2"><i class="fab fa-weebly"></i> 週報</a>
 							</li>
 							<li>
-							  <a class="nav-link" data-toggle="tab" href="#f-3"><i class="fas fa-newspaper"></i>十日報</a>
+							  <a class="nav-link" data-toggle="tab" href="#f-3"><i class="fas fa-newspaper"></i> 十日報</a>
 							</li>
 						</ul>
 						<div class="tab-content" id="myTabContent">
@@ -136,11 +150,11 @@
 			let hh = today.getHours();
 			if(hh<17){
 				url = `https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-055?Authorization=CWB-3C84C151-E276-4C6D-90CD-519A68A65E7C&timeFrom=2022-${month}-${date}T06%3A00%3A00`;
-				console.log(date, hh);
-			} else{
+				console.log("date -- hh : ", date, hh);
+			}else{
 				// 過 17:00 , 重新調用隔天的一週氣象預報
 				url = `https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-055?Authorization=CWB-3C84C151-E276-4C6D-90CD-519A68A65E7C&timeFrom=2022-${month}-${date+1}T06%3A00%3A00`;
-				console.log(date, hh);
+				console.log("date -- hh : ", date, hh);
 			}
 
 			fetch(url)
@@ -230,11 +244,14 @@
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 	<script src="lib/js/bootstrap.min.js"></script>
 
-	<!-- header首頁 icon 提示框 -->
 	<script>
 		$(function () {
+			//  header首頁 icon 提示框 
 			$('[data-toggle="tooltip"]').tooltip();
-		})	
+
+			$('.toast').toast('show');
+
+		});	
 	</script>
 </body>
 </html>
