@@ -1,0 +1,31 @@
+先在 gitHub 官網上  new Project (創新一個專案)
+
+接著如下 6個步驟:
+			D:\履歷\Bootstrao-animal>git init
+			D:\履歷\Bootstrao-animal>git add .
+			D:\履歷\Bootstrao-animal>git commit -m "first commit"
+			D:\履歷\Bootstrao-animal>git remote add origin https://github.com/anlinkw/Bootstrao-animal.git
+			D:\履歷\Bootstrao-animal>git branch -M master
+			D:\履歷\Bootstrao-animal>git push -u origin master
+
+在官網上 專案的 setting 內 , 到 GitHub Pages 選擇 Source => master => save => 產生 專案的URL
+https://anlinkw.github.io/Bootstrao-animal/
+
+
+
+
+步驟說明:
+D:\履歷\Bootstrao-animal>
+	1. git init
+	   git add README.md  (看需求)
+
+	2. git add .
+
+	3. git commit -m "first commit"
+
+
+在gitHub 官網上 copy
+…or push an existing repository from the command line
+	4. git remote add origin https://github.com/anlinkw/bootstrap-animal.git   (建立遠端連結)
+	5. git branch -M master
+	6. git push -u origin master

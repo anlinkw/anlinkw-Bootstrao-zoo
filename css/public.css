@@ -1,0 +1,80 @@
+/* goBack */
+.goBack {
+	display: none;
+	position: fixed;
+	bottom: 50px;
+	right: 20px;
+	width: 38px;
+	height: 38px;
+	background: url(../images/up-icon.png) no-repeat;
+	background-size: 38px 38px;
+	cursor: pointer;
+	background-color: #ff5700a8;
+    border-radius: 50%;
+	z-index: 10;
+  }
+  
+/* 側邊欄 */
+  .sidebar{
+	position: fixed;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	z-index: 10;
+	width: 48px;
+  }
+  
+  .icon-box{
+	width: 48px;
+	height: 48px;
+	display: flex;
+	justify-content: flex-end;
+  }
+  .icon-box .icon{
+	min-width: 48px;
+  }
+  
+  .icon-box:hover .icon{
+	min-width: 64px;
+  }
+  
+  .icon-box a{
+	display: block;
+	width: 48px;
+	height: 48px;
+	text-decoration: none;
+	margin: 0 auto;
+  }
+  
+  .icon-facebook a{
+	background: url("../images/sidebar/facebook-200.png") no-repeat center center / 32px ;
+  }
+  .icon-twitter a{
+	background: url("../images/sidebar/twitter.png") no-repeat center center / 32px ;
+  }
+  .icon-line a{
+	background: url("../images/sidebar/line-w.png") no-repeat center center / 32px ;
+  }
+  
+  .icon-facebook{
+	background-color: #3b5998;
+	transition: all .15s ease-in-out;
+  
+  }
+  .icon-instagram{
+	background-color: #c13584;
+	transition: all .15s ease-in-out; 
+  }
+  .icon-line{
+	background-color: #00b900;
+	transition: all .15s ease-in-out; 
+  }
+  .icon-twitter{
+	background-color: #00aced;
+	transition: all .15s ease-in-out; 
+  }
+  .icon-github{
+	background-color: #24292e;
+	transition: all .15s ease-in-out; 
+  }
+	

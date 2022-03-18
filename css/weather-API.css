@@ -1,0 +1,107 @@
+/* table columns 欄位垂直置中 */
+.table > tbody  > tr > td{
+	vertical-align: middle;
+}
+img{
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+	margin: 0 auto;
+}
+
+#forecast h2{
+	width: 20%;
+	margin: 30px auto 50px;
+}
+#forecast h2, #news-wrapper h2, #video h2{
+	color: #1a67b1;
+	text-align: center;
+	border-bottom: 2px solid black;
+}
+
+.table tr td:nth-child(odd){
+	color:#c9b4b4;
+}
+.table tr td:nth-child(even){
+	color:#f5e9e9;
+}
+.table-dark{
+	background-color: #565f67
+}
+
+/* news */
+#news-wrapper h2, #video h2{
+	width: 10%;
+	margin: 50px auto;
+}
+.main-container{
+	padding: 20px 15px;
+}
+.tab{
+	margin-top: 20px;
+}
+.main-container .tab-content .text-content{
+	padding: 15px 25px;
+	overflow-y: scroll;
+	max-height: 500px;
+	position: relative;
+}
+.list-unstyled{
+	list-style: none;
+	padding: 0;
+	margin-bottom: 10px;
+}
+.list-unstyled.single li::before{
+	content: '>';
+	position: absolute;
+	left: 0;
+	top: 6px;
+	font-size: 1rem;
+}
+.list-unstyled>li {
+	padding: 8px 0 8px 15px;
+	position: relative;
+	letter-spacing: 1px;
+	margin-bottom: 5px;
+}
+.tab-content{
+	padding: 0;
+	border: 2px solid #ecfee4;
+}
+.tab .nav-tabs>li{
+	width: 33.33%;
+	text-align: center;			
+}
+.tab .nav-tabs>li>a{
+	margin: 0;
+	border: none;
+	padding: 15px 25px;
+}
+.tab .nav-tabs>li>a.active{
+	background: #e4f3fe;
+	color: #1a67b1;
+}
+
+@media(max-width:768px) {
+	.table{
+		width: max-content;
+		text-align: center;
+	}
+	.breadcrumb{
+		padding: 0;
+	}
+	#breadcrumb{
+		padding: 15px;
+	}
+	#forecast h2, #news-wrapper h2, #video h2{
+		font-size: 22px;
+		width: 50%;
+	}
+	#news-wrapper h2, #video h2{
+		width: 30%;
+	}
+	#video iframe{
+		width: 100%;
+		height: 100%;
+	}
+}

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+	<title>新竹市立動物園</title>
+	<meta name="description" content="世界上最美的動物,全球分佈的區域,優惠購票,動物贊助活動">
+	<meta name="keywords" content="動物園,犀牛,往上購物,動物贊助,動物保育">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">     
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700;900&display=swap" rel="stylesheet">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="lib/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/google-map.css">
+</head>
+<body>
+	<!----------------------------------- header-begin ----------------------------------------------->
+	<header>
+		<nav class="navbar navbar-expand-md navbar-light fixed-top">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="index.html" data-toggle="tooltip" data-placement="bottom" title="歡迎光臨 新竹市立動物園"><h1>動物園</h1></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-zoo" aria-controls="navbar-zoo" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+			  
+				<div class="collapse navbar-collapse" id="navbar-zoo">
+					<ul class="navbar-nav mr-auto offset-2">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html"><i class="fas fa-window-restore pr-1"></i>世界奇觀 <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#"><i class="fas fa-address-card pr-1"></i>最新消息</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#"><i class="fas fa-map pr-1"></i>全球分佈</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#"><i class="fas fa-shopping-cart pr-1"></i>動物商店</a>
+						</li>
+					</ul>
+					<ul class="navbar-nav d-flex justify-content-center mr-auto">
+						<li class="nav-item menu-tiket">
+							<a class="nav-link" href="#"><i class="fas fa-ticket-alt pr-1"></i>購票優惠</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#"><i class="fas fa-heart pr-1"></i>贊助活動</a>
+						</li>
+				   </ul>
+				</div>
+			</div>
+		</nav>	
+	</header>
+
+	<!-- -----banner ----- -->
+	<section class="banner">
+		<video autoplay loop muted preload="metadata"> 
+				<source src="video/Banner.mp4" type="video/mp4">              
+		</video>               
+    </section>  
+  
+	<!-- title-weather -->
+	<section id="title-weather">
+		<div class="container-fluid pt-5 pb-5">
+			<div class="row">
+				<div class="col-sm-12 col-md-8 text-right mt-5 mb-5" data-aos="fade-down" data-aos-duration="2000">
+					  <h1 class="display-4 text-white"><strong>探索世界上最美麗的動物園 !</strong></h1>
+				</div>
+				<div class="col-sm-12 col-md-4 d-flex justify-content-center">
+					<div class="center" id="app">
+						<div class="front-face ">
+								<div class="txt-pic front">
+									<div class="time"><span>{{time}}</span></div>
+									<p>{{WEATHER.city}} , &nbsp;&nbsp; {{WEATHER.country}}</p>
+									<div class="weather">
+										<span><img :src="imgIcon" alt="icon"></span>
+										<div class="icon-temp"><p>{{WEATHER.temperature}}°<span>C<span></p></div>
+										<div class="icon-desc"><p>{{WEATHER.description}}</p></div>
+									</div>
+								</div>
+						</div>
+						<div class="back-face">
+								<div class="txt-pic back">
+									<h3>開放時間<br>0900 ~ 1700</h3>
+									<span>每週一休館</span>
+								</div>
+						</div>
+					</div>
+			    </div>
+		    </div>
+		</div>
+	</section>
+	
+	<!-- cards -->
+	<section id="cards">
+		<div class="container pb-5">
+			<div class="row">
+				  <div class="item col-12 col-sm-6 col-md-4 col-lg-4" data-aos="fade-up" data-aos-duration="2000">
+                        <div class="box" >
+                              <div class="pic">
+                                	<img src="images/index/cards/card-1.jpg" class="">
+                              </div>
+                              <div class="txt">
+                                    <h3>非凡的動物 ! 驚奇 !</h3>
+                                    <p>世界上最美的動物與來自全世界3500多隻動物見面,定居五大領地。</p>
+                              </div>
+                        </div>
+						<a href="#"><button type="button" class="btn btn-success">訂票優惠</button></a>
+                  </div>
+                  <div class="item col-12 col-sm-6 col-md-4 col-lg-4" data-aos="fade-up"  data-aos-delay="500" data-aos-duration="2000">
+						<div class="box" >
+							<div class="pic">
+									<img src="images/index/cards/card-2.jpg">
+							</div>
+							<div class="txt">
+									<h3>面對面臨場實境教學</h3>
+									<p>我們的保育專家,會回答孩子們任何問題,我們的教育工作坊,會帶領孩子們進入臨場豐沛的動物生活。</p>
+							</div>
+						</div>
+						<a href="#"><button type="button" class="btn btn-success">課程登記</button></a>
+			      </div>
+			      <div class="item col-12 col-sm-6 col-md-4 col-lg-4" data-aos="fade-up"  data-aos-delay="1000" data-aos-duration="2000">
+						<div class="box" >
+							<div class="pic">
+									<a href="#"><img src="images/index/cards/card-3.png"></a>
+							</div>
+							<div class="txt">
+									<h3>NEWS ! 最新動態報導</h3>
+									<p>桃園動物園與荷蘭鬱金香動物園交換北極熊。</p>
+									<p>銀背猩猩第一次當爸爸 !</p>
+									<p>媽嗎跟寶寶黏 T T !</p>
+							</div>
+						</div>
+						<a href="news.html"><button type="button" class="btn btn-success">深入更多</button></a>
+		    	 </div>
+		    </div>
+		</div>
+	</section>
+
+	<!-- sponsor -->
+	<section id="sponsor">
+		<div class="container">
+			<div class="row">
+				<div class="txt">
+					<a href="#">                            
+						<p data-aos="fade-up"  data-aos-delay="300" data-aos-duration="3000">
+							認養 !!<br>
+							你最喜歡的動物 !<br>
+							與動物建立非凡的聯繫<br>
+							支持我們地球村家庭
+						</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- TV -->
+	<section id="tv-content">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-6">
+					<div class="item" data-aos="fade-up" data-aos-duration="2000">
+                        <h4>24hours 直播到你家</h4>
+                        <div class="boxs tv-box">
+                              <video loop autoplay muted>
+                                    <source src="video/giraffe.mp4" type="video/mp4" preload="metadata">
+                              </video>
+                        </div>
+                  	</div>
+				</div>
+				<div class="col-sm-12 col-md-6">
+					<div class="item tv-item" data-aos="fade-up" data-aos-duration="2000">
+                        <h4>體驗動物餵食 來預約吧!</h4>
+						<div id="carousel-img" class="carousel slide boxs" data-ride="carousel">
+							<div class="carousel-inner">
+								<div class="carousel-item active">
+									<img src="images/index/tv-content/tv-1.png" class="img-fluid">
+								</div>
+								<div class="carousel-item">
+									<img src="images/index/tv-content/tv-2.jpg" class="img-fluid">
+								</div>
+								<div class="carousel-item">
+									<img src="images/index/tv-content/tv-3.jpg" class="img-fluid">
+								</div>
+								<div class="carousel-item">
+									<img src="images/index/tv-content/tv-4.jpg" class="img-fluid">
+								</div>
+							</div>
+						   <button class="carousel-control-prev" type="button" data-target="#carousel-img" data-slide="prev">
+							  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							</button>
+							<button class="carousel-control-next" type="button" data-target="#carousel-img" data-slide="next">
+							  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- hot-cards -->
+	<section id="hot-cards">
+		<div class="global-title w-100 text-center">
+			<h2>2022年 票選人氣王</h2>
+	    </div>
+		<div class="container-fluid">
+			<div class="row global-wrap">
+				<div class="col-12 col-sm-6 col-md-3 col-lg-2">
+					<div class="mb-3 card-Box">
+						<img src="images/index/top/9.jfif" class="img-fluid" width="100">
+						<div class="info">
+							<div class="num-1  num">
+								<img src="images/index/icon/icon-1.png" class="img-fluid" width="100">
+							</div>
+							<p>無尾熊是澳洲的特有種動物，全世界僅分布在澳洲的東部昆士蘭省、新南威爾斯、南澳洲和維多利亞地區低海拔樹林中。</p>
+							<a href="#" class="btn">了解我</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6 col-md-3 col-lg-2">
+					<div class="mb-3 card-Box">
+						<img src="images/index/top/2.jpeg" class="img-fluid" width="100">
+						<div class="info">
+							<div class="num-2  num">
+								<img src="images/index/icon/icon-1.png" class="img-fluid" width="100">
+							</div>
+							<p>羊駝，是「馬勒戈壁」上的主要物種，又被稱為「草泥馬戈壁」。能夠克服艱苦環境，並且以「沃草／臥草」為食，是聰明、頑強的動物。</p>
+							<a href="#" class="btn">了解我</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6 col-md-3 col-lg-2">
+					<div class="mb-3 card-Box">
+						<img src="images/index/top/3.jpg" class="img-fluid" width="100">
+						<div class="info">
+							<div class="num-3  num">
+								<img src="images/index/icon/icon-1.png" class="img-fluid" width="100">
+							</div>
+							<p>河馬，產自撒哈拉沙漠以南的非洲地區，棲息於熱帶草原地區的河湖池沼。有時也能結成上百頭的大群。幾乎整個白晝都在水中度過，夜間上岸吃草。</p>
+							<a href="#" class="btn">了解我</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6 col-md-3 col-lg-2">
+					<div class="mb-3 card-Box">
+						<img src="images/index/top/4.jpg" class="img-fluid" width="100">
+						<div class="info">
+							<div class="num-4  num">
+								<img src="images/index/icon/icon-1.png" class="img-fluid" width="100">
+							</div>
+							<p>長頸鹿（學名：Giraffa）是哺乳動物偶蹄目下一個屬，棲居於非洲，是世界上最高的哺乳動物。</p>
+							<a href="#" class="btn">了解我</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6 col-md-3 col-lg-2">
+					<div class="mb-3 card-Box">
+						<img src="images/index/top/5.jfif" class="img-fluid" width="100">
+						<div class="info">
+							<div class="num-5  num">
+								<img src="images/index/icon/icon-1.png" class="img-fluid" width="100">
+							</div>
+							<p>雲豹（學名：Neofelis nebulosa 又稱高砂豹、日文稱台灣虎）是雲豹屬的一種動物，只分布於亞洲的東南部。</p>
+							<a href="#" class="btn">了解我</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6 col-md-3 col-lg-2">
+					<div class="mb-3 card-Box">
+						<img src="images/index/top/1.jpg" class="img-fluid" width="100">
+						<div class="info">
+							<div class="num-6  num">
+								<img src="images/index/icon/icon-1.png" class="img-fluid" width="100">
+							</div>
+							<p>獅子（古稱狻猊），被人稱為萬獸之王。獅是一種生存在非洲和亞洲的大型貓科動物，豹屬之中最著名的一種。</p>
+							<a href="#" class="btn">了解我</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 動物輪廓圖 -->
+	<section class="contour">
+		<picture class="bg-deer">
+			  <img src="images/index/contour/1.png">
+		</picture>
+		<picture class="bg-elephant">
+			  <img src="images/index/contour/4.png">
+		</picture>
+		<picture class="bg-beer">
+			  <img src="images/index/contour/2.png">
+		</picture>
+		<picture class="bg-line">
+			  <img src="images/index/contour/3.png">
+		</picture>
+    </section>  
+
+	<!-- footer -->
+	<footer id="footer">
+		<div class="container-fluid pt-5">
+			<div class="row d-flex justify-content-center align-content-center">
+				<div class="col-sm-12 col-md-3">
+					<div class="d-flex justify-content-end align-items-center logo-box">
+						<a href="index.html" class="footer-logo" data-toggle="tooltip" data-placement="bottom" title="歡迎光臨 新竹市立動物園"><img src="images/logo.png" class="img-fluid"></a>
+					</div>
+				</div>
+				<div class="col-sm-12 col-md-6 box-message text-center">
+						<ul class="d-flex flex-column justify-content-center align-items-start pb-3 offset-3">
+							<li>服務時間 : 0900 ~ 1700(每週一休館)</li>
+							<li>住址 : 新竹市東區復興路100號</li>
+							<li>電話 : (03) 3123-4567</li>
+							<li>信箱 : hsinchu@gmail.com.tw </li>
+						</ul>
+						<button id="footer-btn">給我們留言</button>
+						<p>定期收到動物園最新消息。</p>
+						<ul class="d-flex justify-content-center align-items-center text-center">
+							<li class="m-3" title="大眾運輸交通"><i class="fas fa-car"></i>交通指南</li>
+							<li class="m-3 dirMap" title="Google Map"><i class="fas fa-map-marker-alt"></i>導覽地圖</li>
+							<li class="m-3 cloud"><i class="fas fa-cloud-download-alt"></i><a href="weather-API.html" target="_blank" title="一週氣象預報">即時氣象</a></li>
+							<!-- <li class="m-3"><i class="far fa-hand-point-right"></i>更多氣象</li> -->
+						</ul>
+						<p class="right">Copyright © 2022 Zoo Inc. All rights reserved.</p>
+				</div>
+				<div class="col-sm-12 col-md-3 icons d-none d-sm-block">
+						<ul class="d-flex justify-content-start align-items-center">
+							<li class="m-3"><a href="#"><img src="images/footer/a-1.png" alt="youtube" data-toggle="tooltip" data-placement="bottom" title="聯絡我們的方式 Youtube"></a></li>
+							<li class="m-3"><a href="#"><img src="images/footer/a-2.png" alt="twitter" data-toggle="tooltip" data-placement="bottom" title="聯絡我們的方式 Twitter"></a></li>
+							<li class="m-3"><a href="#"><img src="images/footer/a-3.png" alt="facebook" data-toggle="tooltip" data-placement="bottom" title="聯絡我們的方式 Facebook"></a></li>
+						</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- google Map  -->
+	<section id="google-map">
+		<div id="modal-box">
+			<div class="close-map" id="close-map">&times;</div>
+			<div id="map"></div>
+			<div id="buttons" class="text-center">
+				<button id='starbucks' type="button" class="btn btn-dark" onclick='showInfo(this)'>STARBUCKS</button>
+				<button id='seven' type="button" class="btn btn-dark" onclick='showInfo(this)'>7-11</button>
+				<button id='family' type="button" class="btn btn-dark" onclick='showInfo(this)'>Family</button>
+				<button id='mcdonalmds' type="button" class="btn btn-dark" onclick='showInfo(this)'>McDonald's</button>
+				<button id='hospital' type="button" class="btn btn-dark" onclick='showInfo(this)'>Hospital</button>
+			</div>
+		</div>
+	</section>
+
+	<!-- 返回頂部 -->
+	<div class="goBack"></div>
+
+	<!-- 側邊欄  -->
+	<aside class="sidebar">
+		<div class="icon-box">
+				<div class="icon icon-facebook"><a href="#"></a></div>
+		</div>
+		<div class="icon-box">
+				<div class="icon icon-twitter"><a href="#"></a></div>
+		</div>
+		<div class="icon-box">
+				<div class="icon icon-line"><a href="#"></a></div>
+		</div>
+	</aside>
+
+	<script src="js/public.js"></script>
+	<script src="js/index/index.js"></script>
+
+	<!-- Boostrap JS -->
+	<script src="lib/js/jquery-3.6.min.js"></script>
+	<script src="lib/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="lib/js/bootstrap.min.js"></script>
+
+	<!-- vue.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
+	<!-- axios -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+	<script src="js/index/vue-weather.js"></script>
+
+	<!-- google Map -->
+	<script src="https://maps.google.com/maps/api/js"></script>
+	<script src="js/data.js"></script>
+	<script src="js/new.js"></script>
+
+	<!-- Initialize AOS -->
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		AOS.init({
+				offset:200,
+				once: true,
+		});
+	</script>
+
+	<!-- footer icon 提示框 -->
+	<script>
+		$(function () {
+			$('[data-toggle="tooltip"]').tooltip();
+		})	
+	</script>
+
+</body>
+</html>
+
+<!-- https://anlinkw.github.io/Bootstrao-animal/ -->
