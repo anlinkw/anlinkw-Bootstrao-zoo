@@ -45,6 +45,11 @@
   cursor: pointer;
 }
 
+#footer #footer-btn>a{
+  color: #fff;
+  text-decoration: none;
+}
+
 #footer .cloud>a{
   color: #000;
   text-decoration: none;

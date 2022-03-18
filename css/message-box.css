@@ -9,3 +9,6 @@ body{
 #box{
 	background-color: rgb(238, 238, 161);
 }
+.breadcrumb{
+	margin-bottom: 0;
+}

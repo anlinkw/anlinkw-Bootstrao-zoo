@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="css/message-box.css">
 </head>
 <body>
+	<!-- 導覽列 -->
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-12 col-md-12 breadcrumb">
@@ -33,7 +34,7 @@
 
 	<div id="box">
 		<div class="container p-3">
-				<form id="Form" method="post" enctype="multipart/form-data">
+				<form id="Form" action="" method="post" enctype="multipart/form-data">
 					<!-- <div><input type="hidden" name=""></div> -->
 					<div class="form-group row">
 						<label for="name" class="col-sm-2 col-form-label">您的大名：</label>
@@ -50,7 +51,7 @@
 					<div class="form-group row">
 					  <label for="email" class="col-sm-2 col-form-label">電子信箱：</label>
 					  <div class="col-sm-10">
-							<input type="email" class="form-control" id="email" name="email" size="32" placeholder="name@gmail.com" required>
+							<input type="email" class="form-control" id="email" name="email" size="32" placeholder="name@gmail.com" >
 					  </div>
 					</div>
 					<div class="form-group row">
@@ -64,17 +65,17 @@
 								<option value="4">有關動物認養</option>
 								<option value="5">有關公物報修</option>
 							</select>
-							<div id="c1" style="display: block;">受理一般動物常識、動物相關知識等諮詢</div>
-							<div id="c2" style="display: block;">受理園區服務之諮詢，如業務相關事項詢問、陳情或建議等</div>
-							<div id="c3" style="display: block;">受理網站內容相關諮詢</div>
-							<div id="c4" style="display: block;">受理動物認養捐款相關服務及諮詢</div>
-							<div id="c5" style="display: block;">受理園區相關物品及設施損壞報修</div>
+							<div id="c1" style="display: none;">受理一般動物常識、動物相關知識等諮詢</div>
+							<div id="c2" style="display: none;">受理園區服務之諮詢，如業務相關事項詢問、陳情或建議等</div>
+							<div id="c3" style="display: none;">受理網站內容相關諮詢</div>
+							<div id="c4" style="display: none;">受理動物認養捐款相關服務及諮詢</div>
+							<div id="c5" style="display: none;">受理園區相關物品及設施損壞報修</div>
 					  </div>
 					</div>
 					<div class="form-group row">
 					  <label for="message" class="col-sm-2 col-form-label">問題內容：</label>
 					  <div class="col-sm-10">
-							<textarea class="form-control " id="message" name="message" rows="9" cols="56" required></textarea>
+							<textarea class="form-control " id="message" name="message" rows="9" cols="56" ></textarea>
 					  </div>
 					</div>
 					<div class="form-group row">
@@ -89,7 +90,7 @@
 						<label for="" class="col-sm-2 col-form-label"></label>
 						<div class="col-sm-10">
 							  <input type="submit" class="btn btn-info" id="Button1" name="Button1" value="送出"  style="background-color: cadetblue;">
-							  <input type="reset" class="btn" name="submit" value="重填">
+							  <input type="reset" class="btn" name="submit" value="重填" style="background-color: rgb(241, 226, 89);">
 						</div>
 					  </div>  
 				</form>			
@@ -98,6 +99,14 @@
 
 	<script>
 		function init(){
+			// 類陣列 物件
+			// let items = document.querySelectorAll('option');
+			// 類陣列 轉換成 陣列
+			// const nodelistToArray = Array.apply(null, items);
+			// for(let item in nodelistToArray){
+			// 	console.log(nodelistToArray[item]);
+			// }
+
 			let c1 = document.querySelector('#c1');
 			let c2 = document.querySelector('#c2');
 			let c3 = document.querySelector('#c3');
@@ -105,6 +114,15 @@
 			let c5 = document.querySelector('#c5');
 			let arr = [c1, c2, c3, c4, c5];
 
+			let choice = document.querySelector('#choice');
+			choice.onchange = function(){
+				// 被選到項目的索引值
+				let index = this.selectedIndex;
+				for(let i=0; i<arr.length; i++){
+					arr[i].style.display = 'none';
+				};
+				document.querySelector(`#c${index}`).style.display = 'block';
+			}
 		}
 		window.addEventListener('load', init)
 	</script>
