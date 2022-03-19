@@ -12,3 +12,51 @@ body{
 .breadcrumb{
 	margin-bottom: 0;
 }
+
+
+
+/* 彈窗 */
+#message-map{
+	margin: auto;
+	position: fixed;
+    top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+    z-index: 99;
+    width: 50vw;
+    height: 30vh;
+	display: none;
+}
+
+
+#message-map #close-map{
+    position: absolute;
+	right: 20px;
+    top:-15px;
+    font-size: 50px;
+    color: #fff;
+    cursor: pointer;
+	width: 15px;
+	height: 15px;
+	z-index: 101;
+}
+
+#map{
+	height: 100%; 
+    background-color: #ffca00;
+	z-index: 100;
+    border-radius: 20px;
+    padding: 40px;
+    letter-spacing: 2px;
+}
+
+@media(max-width:768px) {
+	#message-map{
+        width: 80%;
+        font-size: 15px;
+	}
+    #map{
+        padding: 30px;
+    }
+}

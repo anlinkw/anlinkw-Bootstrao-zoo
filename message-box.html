@@ -39,7 +39,7 @@
 					<div class="form-group row">
 						<label for="name" class="col-sm-2 col-form-label">您的大名：</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="name" name="name" placeholder="請輸入" required>
+							<input type="text" class="form-control" id="name" name="name" size="8" maxlength="6" placeholder="請輸入" required>
 						</div>
 					</div>
 					<div class="form-group row">
@@ -51,7 +51,7 @@
 					<div class="form-group row">
 					  <label for="email" class="col-sm-2 col-form-label">電子信箱：</label>
 					  <div class="col-sm-10">
-							<input type="email" class="form-control" id="email" name="email" size="32" placeholder="name@gmail.com" >
+							<input type="email" class="form-control" id="email" name="email" size="32" placeholder="name@gmail.com" required>
 					  </div>
 					</div>
 					<div class="form-group row">
@@ -97,6 +97,18 @@
 		</div>
 	</div>
 
+	<!-- 彈窗 -->
+	<section id="message-map">
+			<div class="close-map" id="close-map">&times;</div>
+			<div id="map">
+				<h1>Hi ~ &nbsp;<strong id="personal">ALEX</strong>&nbsp;&nbsp;&nbsp;&nbsp; 先生/小姐</h1>
+				<p>誠致感謝您提供寶貴的意見,園區將專案處理,</p>
+				<p>如需回覆,將發送您填寫的電子信箱.</p>
+				<p>專案負責人: &nbsp;&nbsp;&nbsp;&nbsp; 犀牛先生</p>
+			</div>
+	</section>
+
+
 	<script>
 		function init(){
 			// 類陣列 物件
@@ -122,9 +134,35 @@
 					arr[i].style.display = 'none';
 				};
 				document.querySelector(`#c${index}`).style.display = 'block';
-			}
+			};
+
+			// 關閉 彈窗
+			let closebtn = document.querySelector('#close-map');
+			let googleMap = document.querySelector('#message-map');
+			closebtn.addEventListener('click', ()=>{
+				googleMap.style.display = 'none';
+				// 填寫表格 內容刷新
+				location.reload();
+			})
+
+			// 開啟 彈窗
+			let storage = localStorage;  // 二擇一
+			let personal = document.querySelector('#personal');
+			let itemId = document.querySelector('#email');
+			let itemValue = document.querySelector('#name');
+			storage.setItem(itemId.value, itemValue.value); 
+			
+			let Button1 = document.querySelector('#Button1');
+			// 表格 送出
+			Button1.addEventListener('click', function(){
+				// 取消 預設跳轉
+				event.preventDefault();
+				googleMap.style.display = 'block';
+				storage.setItem(itemId.value, itemValue.value); 
+				personal.innerText = itemValue.value;
+			});
 		}
-		window.addEventListener('load', init)
+		window.addEventListener('load', init, false)
 	</script>
 
 
