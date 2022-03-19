@@ -157,9 +157,13 @@
 			Button1.addEventListener('click', function(){
 				// 取消 預設跳轉
 				event.preventDefault();
-				googleMap.style.display = 'block';
-				storage.setItem(itemId.value, itemValue.value); 
-				personal.innerText = itemValue.value;
+				if(!itemId.value | !itemValue.value){
+					alert("請重新檢查 填寫大名/信箱 !")
+				}else{
+					googleMap.style.display = 'block';
+					storage.setItem(itemId.value, itemValue.value); 
+					personal.innerText = itemValue.value;
+				}
 			});
 		}
 		window.addEventListener('load', init, false)
