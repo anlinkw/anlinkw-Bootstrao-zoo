@@ -149,7 +149,7 @@
 			let month = ('0' + (today.getMonth() + 1 )).slice(-2);
 			let date = today.getDate()
 			let hh = today.getHours();
-			if(hh < 17 && hh == 17){
+			if(hh < 17){
 				url = `https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-055?Authorization=CWB-3C84C151-E276-4C6D-90CD-519A68A65E7C&timeFrom=2022-${month}-${date}T06%3A00%3A00`;
 				console.log("date -- hh : ", date, hh);
 			}else{
@@ -172,30 +172,33 @@
 				let weatherPhenomenon = data.records.locations[0].location[0].weatherElement[6].time;
 
 				// 晚上 (天氣現象)
-				let oddArray = [];
+				let nightArray = [];
 				// 白天 (天氣現象)
-				let evenArray = [];
+				let dayArray = [];
 				for(let k in weatherPhenomenon){
 					if(k%2 !== 0){
 						// console.log(k); // 1 3 5 7 9 13  晚上 
-						oddArray.push(weatherPhenomenon[k]);
+						nightArray.push(weatherPhenomenon[k]);
 					}else{
-						evenArray.push(weatherPhenomenon[k]);
+						dayArray.push(weatherPhenomenon[k]);
 					}
-				}
+				};
 
 				// 晚上 (平均溫度)
-				let oddTemp = [];
+				let nightTemp = [];
 				// 白天 (平均溫度)
-				let evenTemp = []; 
+				let dayTemp = []; 
 				for(let k in temperature){
 					if(k%2 !== 0){
 						// 1 3 5 7 9 13  晚上 
-						oddTemp.push(temperature[k]);
+						nightTemp.push(temperature[k]);
 					}else{
-						evenTemp.push(temperature[k]);
+						dayTemp.push(temperature[k]);
 					}
 				};
+				// console.log((dataToLocal(dayArray[0].startTime))); // ['03/22', '星期二']
+				// console.log((dataToLocal(dayArray[0].startTime))[0]); // 03/22
+				// console.log((dataToLocal(dayArray[0].startTime))[1]); // 星期二
 
 				// 時間單位轉換
 				function dataToLocal(obj){
@@ -213,18 +216,18 @@
 								switch(i){
 									case 0: // 白天
 									locationData += `<td>
-										<span> ${(dataToLocal(evenArray[j].startTime))[0]}<br>
-											${(dataToLocal(evenArray[j].startTime))[1]}<br>白天</span><br>
-										<img src="images/weather-icons-t/day/${evenArray[j].elementValue[0].value}.svg" title="${evenArray[j].elementValue[0].value}"/><br>
-										平均 ${evenTemp[j].elementValue[0].value}<span>°C</span>
+										<span> ${(dataToLocal(dayArray[j].startTime))[0]}<br>
+											${(dataToLocal(dayArray[j].startTime))[1]}<br>白天</span><br>
+										<img src="images/weather-icons-t/day/${dayArray[j].elementValue[0].value}.svg" title="${dayArray[j].elementValue[0].value}"/><br>
+										平均 ${dayTemp[j].elementValue[0].value}<span>°C</span>
 									</td>`;
 									break;
 									case 1: // 晚上
 									locationData += `<td>
-										<span>${(dataToLocal(oddArray[j].startTime))[0]}<br>
-											${(dataToLocal(oddArray[j].startTime))[1]}<br>晚上</span><br>
-										<img src="images/weather-icons-t/night/${oddArray[j].elementValue[0].value}.svg" title="${oddArray[j].elementValue[0].value}"/><br>
-										平均 ${oddTemp[j].elementValue[0].value}<span>°C</span>
+										<span>${(dataToLocal(nightArray[j].startTime))[0]}<br>
+											${(dataToLocal(nightArray[j].startTime))[1]}<br>晚上</span><br>
+										<img src="images/weather-icons-t/night/${nightArray[j].elementValue[0].value}.svg" title="${nightArray[j].elementValue[0].value}"/><br>
+										平均 ${nightTemp[j].elementValue[0].value}<span>°C</span>
 									</td>`;
 									break;
 								}
