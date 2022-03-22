@@ -69,7 +69,6 @@ window.addEventListener('scroll', ()=>{
 })
 
 
-
 // Google Map Modal (彈窗)
 let openMap = document.querySelector('.dirMap');
 let closebtn = document.querySelector('#close-map');

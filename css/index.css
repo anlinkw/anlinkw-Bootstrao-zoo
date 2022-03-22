@@ -31,6 +31,10 @@
   animation: around 16s 0s linear infinite;
 }
 
+[v-cloak]{
+  display: none;
+}
+
 @keyframes around {
   0% {
     transform: rotateY(0deg);
