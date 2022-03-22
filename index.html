@@ -82,12 +82,12 @@
 									<p>{{WEATHER.city}} , &nbsp;&nbsp; {{WEATHER.country}}</p>
 									<div class="weather">
 										<span><img :src="imgIcon" alt="icon"></span>
-										<div class="icon-temp"><p>{{WEATHER.temperature}}°<span>C<span></p></div>
+										<div class="icon-temp"><p>{{WEATHER.temperature}}°<span>C</span></p></div>
 										<div class="icon-desc"><p>{{WEATHER.description}}</p></div>
 									</div>
 								</div>
 						</div>
-						<div class="back-face">
+						<div class="back-face" v-pre>
 								<div class="txt-pic back">
 									<h3>開放時間<br>0900 ~ 1700</h3>
 									<span>每週一休館</span>
