@@ -21,13 +21,16 @@
 	<link rel="stylesheet" href="css/footer.css">
 	<link rel="stylesheet" href="css/public.css">
 	<link rel="stylesheet" href="css/google-map.css">
+	<!-- tippy CSS -->
+	<link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css">
+
 </head>
 <body>
 	<!----------------------------------- header-begin ----------------------------------------------->
 	<header>
 		<nav class="navbar navbar-expand-md navbar-light fixed-top">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="index.html" data-toggle="tooltip" data-placement="bottom" title="歡迎光臨 新竹市立動物園"><h1>動物園</h1></a>
+				<a class="navbar-brand" href="index.html"><h1>動物園</h1></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-zoo" aria-controls="navbar-zoo" aria-expanded="false" aria-label="Toggle navigation">
 				  <span class="navbar-toggler-icon"></span>
 				</button>
@@ -313,7 +316,7 @@
 			<div class="row d-flex justify-content-center align-content-center">
 				<div class="col-sm-12 col-md-3">
 					<div class="d-flex justify-content-end align-items-center logo-box">
-						<a href="index.html" class="footer-logo" data-toggle="tooltip" data-placement="bottom" title="歡迎光臨 新竹市立動物園"><img src="images/logo.png" class="img-fluid"></a>
+						<a href="index.html" class="footer-logo"><img src="images/logo.png" class="img-fluid"></a>
 					</div>
 				</div>
 				<div class="col-sm-12 col-md-6 box-message text-center">
@@ -360,7 +363,7 @@
 	</section>
 
 	<!-- 返回頂部 -->
-	<div class="goBack"></div>
+	<div class="goBack" title="返回頂部"></div>
 
 	<!-- 側邊欄  -->
 	<aside class="sidebar">
@@ -403,7 +406,31 @@
 		});
 	</script>
 
-	<!-- footer icon 提示框 -->
+	<!-- tippy.js -->
+	<script src="https://unpkg.com/@popperjs/core@2"></script>
+	<script src="https://unpkg.com/tippy.js@6"></script>
+	<script>
+			tippy('.navbar-brand', {
+				content: '歡迎光臨 新竹市立動物園',
+				followCursor: true,
+				placement: 'right',
+				duration: 100,
+				maxWidth: 250,
+				offset: [20, 20],
+				animation: 'scale',
+			});
+			tippy('.footer-logo', {
+				content: '歡迎光臨 新竹市立動物園',
+				followCursor: true,
+				placement: 'right',
+				duration: 100,
+				maxWidth: 250,
+				offset: [20, 20],
+				animation: 'scale',
+			});		
+	</script>
+
+	<!--  header-logo, footer-logo, footer-icon 提示框 -->
 	<script>
 		$(function () {
 			$('[data-toggle="tooltip"]').tooltip();
@@ -414,3 +441,5 @@
 </html>
 
 <!-- https://anlinkw.github.io/anlinkw-Bootstrao-zoo/ -->
+
+<!-- https://atomiks.github.io/tippyjs/ -->
