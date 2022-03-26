@@ -35,9 +35,14 @@
 	<div id="box">
 		<div class="container p-3">
 				<form id="Form" action="" method="post" enctype="multipart/form-data">
+					<div class="star">
+						<span class="field-required">(*)星號為必填欄位</span>
+					</div>
 					<!-- <div><input type="hidden" name=""></div> -->
 					<div class="form-group row">
-						<label for="name" class="col-sm-2 col-form-label">您的大名：</label>
+						<label for="name" class="col-sm-2 col-form-label">
+							<span class="field-required">*</span>您的大名：
+						</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="name" name="name" size="8" maxlength="6" placeholder="請輸入" required autofocus>
 						</div>
@@ -49,7 +54,9 @@
 						</div>
 					</div>
 					<div class="form-group row">
-					  <label for="email" class="col-sm-2 col-form-label">電子信箱：</label>
+					  <label for="email" class="col-sm-2 col-form-label">
+							<span class="field-required">*</span>電子信箱：
+					  </label>
 					  <div class="col-sm-10">
 							<input type="email" class="form-control" id="email" name="email" size="32" placeholder="name@gmail.com" required>
 					  </div>
@@ -73,9 +80,11 @@
 					  </div>
 					</div>
 					<div class="form-group row">
-					  <label for="message" class="col-sm-2 col-form-label">問題內容：</label>
+					  <label for="message" class="col-sm-2 col-form-label">
+							<span class="field-required">*</span>問題內容：
+					</label>
 					  <div class="col-sm-10">
-							<textarea class="form-control " id="message" name="message" rows="9" cols="56" ></textarea>
+							<textarea class="form-control " id="message" name="message" rows="9" cols="56" placeholder="請輸入內容" required></textarea><br> (請勿超過 1000個字)
 					  </div>
 					</div>
 					<div class="form-group row">
@@ -150,6 +159,7 @@
 			let personal = document.querySelector('#personal');
 			let itemId = document.querySelector('#email');
 			let itemValue = document.querySelector('#name');
+			let itemMessage = document.querySelector('#message');
 			storage.setItem(itemId.value, itemValue.value); 
 			
 			let Button1 = document.querySelector('#Button1');
@@ -157,8 +167,8 @@
 			Button1.addEventListener('click', function(){
 				// 取消 預設跳轉
 				event.preventDefault();
-				if(!itemId.value | !itemValue.value){
-					alert("請重新檢查 填寫大名/信箱 !")
+				if(!itemId.value | !itemValue.value | !itemMessage){
+					alert("請重新檢查 填寫大名/信箱/問題內容 !")
 				}else{
 					googleMap.style.display = 'block';
 					storage.setItem(itemId.value, itemValue.value); 
@@ -206,3 +216,5 @@
 </html>
 
 <!-- https://anlinkw.github.io/anlinkw-Bootstrao-zoo/ -->
+
+<!-- https://www.post.gov.tw/post/internet/Customer_service/index.jsp?ID=1603 中華郵政意見箱 -->
