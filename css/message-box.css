@@ -39,7 +39,7 @@ body{
     z-index: 99;
     width: 50vw;
     height: 30vh;
-	display: block;
+	display: none;
 }
 
 #message-map #close-map{
