@@ -14,6 +14,7 @@ const APP = new Vue({
 	},
 	methods:{
 	},
+	// 掛載
 	mounted(){
 		let self = this;
 		axios.get(this.api).then(function(res){
