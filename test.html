@@ -54,6 +54,8 @@
 		</div>
 	</div>
 
+
+
 	<script>
 		function doFirst(){
 			const weather = {};
@@ -87,7 +89,9 @@
 				}
 				busData += '</table>';
 				busMap.innerHTML = busData;
+
 			})
+
 		}
 		window.addEventListener('load',doFirst);
 	</script>
@@ -110,3 +114,19 @@
 </body>
 </html>
 
+<!-- 
+	// CityBus 市區公車之路線資料
+	// https://ptx.transportdata.tw/MOTC/v2/Bus/Route/City/Hsinchu?%24top=30&%24format=JSON
+
+	// 市區公車路線班表資料(市區公車之班表及班距資料。一般市區公車班次較多時會採用【班距】式時刻表；班次較少時會採用【班表】式時刻表)
+	// https://ptx.transportdata.tw/MOTC/v2/Bus/Schedule/City/Hsinchu?%24top=30&%24format=JSON
+
+
+
+
+	// 新竹市立動物園110年度門票收入及入園人數統計表
+	// https://odws.hccg.gov.tw/001/Upload/25/opendataback/9059/622/5a276a5a-19c0-4df5-b2c4-5fbf9500ede0.json
+
+	// 新竹市動物園動物資料
+	// https://odws.hccg.gov.tw/001/Upload/25/OpenData/9059/16/e394cc37-0684-4a3c-87c1-d7aa1e11851b.json 
+-->
